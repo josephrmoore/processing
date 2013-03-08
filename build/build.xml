@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Processing" default="build">
+<project name="Processing For Babies" default="build">
   
   <!-- Sets properties for macosx/windows/linux depending on current system -->
   <condition property="platform" value="macosx">
@@ -55,7 +55,7 @@
 	       
   <!-- Figure out the platform-specific output directory for all this work. -->
   <condition property="target.path" 
-	     value="macosx/work/Processing.app/Contents/Resources/Java">
+	     value="macosx/work/Processing For Babies.app/Contents/Resources/Java">
     <os family="mac" /> 
   </condition>
 
@@ -386,11 +386,11 @@
     </copy>
     
     <move file="macosx/work/template.app" 
-	  tofile="macosx/work/Processing.app" />
+	  tofile="macosx/work/Processing For Babies.app" />
 
-    <chmod file="macosx/work/Processing.app/Contents/MacOS/JavaApplicationStub" perm="ugo+x" />
+    <chmod file="macosx/work/Processing For Babies.app/Contents/MacOS/JavaApplicationStub" perm="ugo+x" />
       
-    <copy todir="macosx/work/Processing.app/Contents/Resources/Java">
+    <copy todir="macosx/work/Processing For Babies.app/Contents/Resources/Java">
       <fileset dir=".." includes="core/library/**" />
       <fileset dir="shared" includes="launch4j/**" />
       <fileset dir="shared" includes="lib/**" />
@@ -398,12 +398,12 @@
       <fileset file="shared/revisions.txt" />
     </copy>
 
-    <copy todir="macosx/work/Processing.app/Contents/Resources/Java/lib" 
+    <copy todir="macosx/work/Processing For Babies.app/Contents/Resources/Java/lib" 
 	  flatten="true">
       <fileset refid="runtime.jars"/>
     </copy>
 
-    <property name="launch4j.dir" value="macosx/work/Processing.app/Contents/Resources/Java/launch4j" />
+    <property name="launch4j.dir" value="macosx/work/Processing For Babies.app/Contents/Resources/Java/launch4j" />
 
     <!-- rename the version we need -->
     <move file="${launch4j.dir}/bin/windres-macosx"
@@ -422,7 +422,7 @@
     </delete>
 
     <antcall target="assemble">
-      <param name="target.path" value="macosx/work/Processing.app/Contents/Resources/Java" />
+      <param name="target.path" value="macosx/work/Processing For Babies.app/Contents/Resources/Java" />
     </antcall>
   </target>
   
@@ -431,7 +431,7 @@
     <exec executable="open" dir="macosx/work" spawn="true">
       <arg value="-a" />
       <arg value="/Applications/Utilities/Terminal.app" />
-      <arg value="Processing.app/Contents/MacOS/JavaApplicationStub" />
+      <arg value="Processing For Babies.app/Contents/MacOS/JavaApplicationStub" />
     </exec>
   </target>
 
@@ -444,7 +444,7 @@
       <arg value="--force" />
       <arg value="--sign" />
       <arg value="Developer ID Application" />
-      <arg value="Processing.app" />
+      <arg value="Processing For Babies.app" />
     </exec>
   </target>
 
@@ -453,11 +453,11 @@
 	  description="Create a downloadable .zip for the Mac OS X version">
 
     <!-- The ant copy command does not preserve permissions. -->
-    <chmod file="macosx/work/Processing.app/Contents/MacOS/JavaApplicationStub" perm="ugo+x" />
+    <chmod file="macosx/work/Processing For Babies.app/Contents/MacOS/JavaApplicationStub" perm="ugo+x" />
 
-    <replace file="macosx/work/Processing.app/Contents/Info.plist"
+    <replace file="macosx/work/Processing For Babies.app/Contents/Info.plist"
 	     token="VERSION" value="${version}" />
-    <replace file="macosx/work/Processing.app/Contents/Info.plist"
+    <replace file="macosx/work/Processing For Babies.app/Contents/Info.plist"
 	     token="REVISION" value="${revision}" />
 
     <antcall target="macosx-dist-sign" />
@@ -490,7 +490,7 @@
     </copy>
 
     <!-- The ant copy command does not preserve permissions. -->
-    <chmod file="macosx/working_dir/Processing.app/Contents/MacOS/JavaApplicationStub" perm="ugo+x" />
+    <chmod file="macosx/working_dir/Processing For Babies.app/Contents/MacOS/JavaApplicationStub" perm="ugo+x" />
 
     <!-- Pause briefly for the OS to catch up with the DMG changes. 
 	 This prevents "hdiutil: couldn't eject "disk3" - Resource busy"

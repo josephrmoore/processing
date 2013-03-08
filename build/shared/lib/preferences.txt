@@ -102,7 +102,7 @@ editor.window.height.min.windows = 530
 # font size for editor
 editor.font=Monospaced,plain,12
 # Monaco is nicer on Mac OS X, so use that explicitly
-editor.font.macosx = Monaco,plain,10
+editor.font.macosx = Kids,plain,24
 
 # anti-aliased text, turned off by default
 editor.antialias=false
@@ -153,7 +153,7 @@ editor.divider.size.windows = 2
 
 # font choice and size for the console
 console.font = Monospaced,plain,11
-console.font.macosx = Monaco,plain,10
+console.font.macosx = Kids,plain,10
 
 # number of lines to show by default
 console.lines = 4

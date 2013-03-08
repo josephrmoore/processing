@@ -3,7 +3,7 @@
 <plist version="0.9">
   <dict>
     <key>CFBundleName</key>
-    <string>Processing</string>
+    <string>Processing For Babies</string>
 
     <!-- all these need to change for new releases -->
     <key>CFBundleGetInfoString</key>
@@ -61,6 +61,9 @@
 
     <key>NSHighResolutionCapable</key>
     <true/>
+
+	<key>ATSApplicationFontsPat</key>
+	<string>fonts</string>
 
     <key>Java</key>
     <dict>
